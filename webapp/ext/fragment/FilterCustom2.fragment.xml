@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+        <ComboBox
+            id="FilterCustom2"
+            core:require="{handler: 'zrap100ws7/ext/fragment/FilterCustom2'}"
+            selectedKey="{path: 'filterValues>', type: 'sap.fe.macros.filter.type.Value', formatOptions: { operator: 'zrap100ws7.ext.fragment.FilterCustom2.filterItems' }}"
+        >
+            <items>
+                <core:Item id="_IDGenItem1" key="0" text="USD"/>
+                <core:Item id="_IDGenItem2" key="1" text="EUR"/>
+                <core:Item id="_IDGenItem3" key="2" text="PLN"/>
+            </items>
+        </ComboBox>
+</core:FragmentDefinition>

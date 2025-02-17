@@ -1,0 +1,39 @@
+.cssRow { 
+    background-color: rgb(162, 212, 112) !important;
+}   
+
+.count-down-timer { 
+    transform-style: preserve-3d;
+    animation: rotate 5s infinite linear;
+}
+
+@keyframes rotate { 
+    0% { transform: perspective(500px) rotateX(0deg) rotateY(0deg);}
+    100% { transform: perspective(500px) rotateX(360deg) rotateY(360deg);}
+}
+
+.newButton { 
+    background-color: rgb(46, 207, 164)  !important;
+    border-radius: 50%  !important;
+    border: none  !important;
+    width: 50px  !important;
+    height: 50px  !important;
+    padding: 0  !important;
+    min-width: 50px  !important;
+    display: flex  !important;
+    justify-content: center  !important;
+    align-items: center  !important;
+    border: none  !important;
+    box-shadow: 0 2px 4px rgb(0,0,0,0.2)  !important;
+    transition: all 0.3s ease !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    color: antiquewhite !important;
+}
+.newButton:hover { 
+    background-color: rgb(205, 35, 35) !important;
+}
+
+.newButton.sapMBtn:active { 
+    background-color: rgb(226, 196, 24) !important;
+}

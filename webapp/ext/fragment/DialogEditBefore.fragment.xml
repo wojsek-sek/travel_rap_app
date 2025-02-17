@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:viz="sap.viz.ui5.controls" xmlns:control="zrap100ws7.control">
+	 <Dialog id="customDialog" contentHeight="14%" contentWidth="20%">
+        <content>
+            <VBox id="vbox" justifyContent="Center" alignItems="Center">
+                <control:ClockTimer id="countDown" seconds="3" textColor="green" backgroundColor="linear-gradient(135deg, #ff6f61, #6b5b95)" class="count-down-timer" finished="clockOnFinish"/>
+           </VBox>
+           <control:extendButton id="exButton" text="Wow"/>
+        </content>
+        <beginButton>
+            <Button id="Edit" text="Accept" type="Accept"></Button>
+        </beginButton>
+        <endButton>
+            <Button id="Cancel" text="Cancel" type="Negative"></Button>
+        </endButton>
+     </Dialog>
+</core:FragmentDefinition>

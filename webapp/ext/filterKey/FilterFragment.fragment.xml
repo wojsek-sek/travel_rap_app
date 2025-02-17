@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+        <MultiComboBox
+            id="ControFilterId"
+            core:require="{handler: 'zrap100ws7/ext/filterKey/FilterKey'}"
+            selectedKeys="{path: 'filterValues>', type: 'sap.fe.macros.filter.type.MultiValue', formatOptions: { operator: 'zrap100ws7.ext.filterKey.FilterKey.NameFunction' }}"
+        >
+            <items>
+                <core:Item id="_IDGenItem7" key="q" text="Item1"/>
+                <core:Item id="_IDGenItem8" key="w" text="Item2"/>
+                <core:Item id="_IDGenItem9" key="e" text="Item3"/>
+            </items>
+        </MultiComboBox>
+</core:FragmentDefinition>

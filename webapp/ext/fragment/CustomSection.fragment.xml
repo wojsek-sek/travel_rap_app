@@ -1,0 +1,12 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:macros="sap.fe.macros" xmlns:f="sap.ui.layout.form">
+	<VBox id="_IDGenVBox">		<Tree
+		    id="Tree"
+		    items="{path: 'nodesModel>/Nodes',
+				    parameters : {
+		                countMode: 'Inline'
+		            }
+            }">
+			<StandardTreeItem id="_IDGenStandardTreeItem" title="{nodesModel>Description}"/>
+		</Tree>
+	</VBox>
+</core:FragmentDefinition>

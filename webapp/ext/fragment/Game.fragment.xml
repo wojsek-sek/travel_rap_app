@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:control="zrap100ws7.control">
+	<VBox id="vboxGame" justifyContent="Center" alignItems="Center">
+		<Title id="scoreGame" text="Score : 0" titleStyle="H4"></Title>
+		<Button id="buttonStart" core:require="{ handler: 'zrap100ws7/ext/fragment/Game.controller'}" press="handler.onStart" text="Play"></Button>
+		<Button id="buttonEnd" core:require="{ handler: 'zrap100ws7/ext/fragment/Game.controller'}" press="handler.onEnd" text="End" visible="false"></Button>
+	</VBox>
+		<control:extendButton id="gameButton" core:require="{ handler: 'zrap100ws7/ext/fragment/Game.controller'}" press="handler.onPress" />
+</core:FragmentDefinition>
