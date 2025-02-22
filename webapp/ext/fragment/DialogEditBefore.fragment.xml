@@ -4,7 +4,6 @@
             <VBox id="vbox" justifyContent="Center" alignItems="Center">
                 <control:ClockTimer id="countDown" seconds="3" textColor="green" backgroundColor="linear-gradient(135deg, #ff6f61, #6b5b95)" class="count-down-timer" finished="clockOnFinish"/>
            </VBox>
-           <control:extendButton id="exButton" text="Wow"/>
         </content>
         <beginButton>
             <Button id="Edit" text="Accept" type="Accept"></Button>

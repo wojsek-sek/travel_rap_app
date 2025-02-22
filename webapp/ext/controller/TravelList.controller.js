@@ -11,6 +11,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
              */
 			onInit: function () {
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
+				const oRouter = this.base.getAppComponent().getRouter();
+				oRouter.getRoute("TravelList").attachPatternMatched(this._onPatternMatched, this);
 			},
 			onViewNeedsRefresh: function() { 
 				this.base.getExtensionAPI().refreshView();
@@ -43,8 +45,32 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						//console.log(a)
 				})
 			},
+			// routing functions like onAfterBinding, onBeforeBinding, onBeforeNavigation
 			routing: { 
-				onAfterBinding: function() { 
+				onAfterBinding: function(oEvent) { 
+					let oTable, oView = this.base.getView();
+					oView.findAggregatedObjects(true, (oControl) => { 
+						if(oControl.isA("sap.ui.mdc.Table")) { 
+							oTable = oControl;
+							return true;
+						} 
+						return false;
+					})
+	
+					if(oTable) { 
+						let observer = new MutationObserver(() => { 
+							let oBinding = oTable.getBinding("rows"); 
+
+							if(oBinding) { 
+								console.log("asddas")
+								console.log(oBinding)
+								// cos tam kiedt ready 
+								observer.disconnect();
+							}
+						});
+
+						observer.observe(oTable, { attributes: true, childList: true, subtree: true})
+					}
 				}
 			}
 		},
@@ -52,6 +78,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			var collectionBindingInfoAPI = event.getParameter("collectionBindingInfo");
 			var table = this.getView().byId("fe::table::tableView::LineItem")
 			
+		},
+		_onPatternMatched: function(oEvent) { 
+			const oArguments = oEvent.getParameter("arguments");
+			this.base.getView().attachEvent("modelContextChange", this._onBindingViewChange, this);
+		},
+		_onBindingViewChange: function() { 
+			//here logic when model Change
 		},
 		onSearch: function(oEvent) {
 
